@@ -1,0 +1,3 @@
+﻿  cblab005.cpp
+C:\Users\Smetania\source\repos\cblab005\cblab005.cpp(147,19): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  cblab005.vcxproj -> C:\Users\Smetania\source\repos\cblab005\x64\Debug\cblab005.exe

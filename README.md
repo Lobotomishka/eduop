@@ -7,6 +7,6 @@ input
 
 
 -------------
-(paste output text)
+(output sucsses)
 -------------
 output

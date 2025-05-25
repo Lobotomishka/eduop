@@ -1,0 +1,4 @@
+﻿  cblab005.cpp
+C:\Users\Пользователь\source\repos\eduop\cblab005\-eduop\cblab005.cpp(179,19): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Пользователь\source\repos\eduop\cblab005\-eduop\cblab005.cpp(37): warning C4715: check: значение возвращается не при всех путях выполнения
+  cblab005.vcxproj -> C:\Users\Пользователь\source\repos\eduop\cblab005\-eduop\x64\Debug\cblab005.exe

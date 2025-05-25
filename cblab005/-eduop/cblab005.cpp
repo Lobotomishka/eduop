@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 #include <windows.h>
+#undef min // отменяет определение макроса (для нормальной работы max и windows,h)
+#undef max
 
 //static void output(vector <plane> sizif2, int i2)
 //{
@@ -12,24 +14,27 @@
 //        "Фамилия: " << sizif2[i2].surname << endl <<
 //        "Дата: " << sizif2[i2].date << endl;
 //}
-//int check(int number) //проверка переменных на буквы и другие некорректные символы
-//{
-//    //setlocale(LC_ALL, "rus");
-//    bool inputValid = false;
-//
-//    while (!inputValid)
-//    {
-//        if (cin >> number) {
-//            inputValid = true;
-//            return number;
-//        }
-//        else {
-//            cin.clear();
-//            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-//            cout << "Некорректная переменная, попробуйте ещё раз" << endl;
-//        }
-//    }
-//}
+
+void ignore() { cin.ignore(numeric_limits<streamsize>::max(), '\n'); }
+
+int check(int number) //проверка переменных на буквы и другие некорректные символы
+{
+    setlocale(LC_ALL, "rus");
+    bool inputValid = false;
+
+    while (!inputValid)
+    {
+        if (cin >> number) {
+            inputValid = true;
+            return number;
+        }
+        else {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Такой операции нет" << endl;
+        }
+    }
+}
 
 struct plane //структура с данными заявки 
 {
@@ -62,12 +67,16 @@ plane addnewapp() //добавить новую заявку
     plane bilet2, err;
     cout << "Введите номер: ";
     cin >> bilet2.number;
+    ignore();
     cout << "Введите пункт назначения: ";
     cin >> bilet2.destination;
+    ignore();
     cout << "Введите фамилию: ";
     cin >> bilet2.surname;
+    ignore();
     cout << "Введите дату: ";
     cin >> bilet2.date;
+    ignore();
     //if (check_num(bilet2.number) == false)
     //{
     //    cout << "Номер введён некорректно " << endl;
@@ -92,8 +101,12 @@ void highlight() //просто выделение
 
 void sealprinzipi(vector <plane> sizeb) //вывести всё
 {
-    cout << endl;
-    if (sizeb.size() == 0) { cout << "Заявок нет" << endl; }
+    if (sizeb.size() == 0) 
+    { 
+        highlight();
+        cout << "Заявок нет" << endl; 
+        highlight();
+    }
     else {
         for (int i = 0; i < sizeb.size(); i++)
         {
@@ -150,17 +163,19 @@ int main()
     vector <plane> bilet;
     do
     {
-        cout << "Операция: ";
+        //cout << "Операция: ";
         switch (op)
         {
         case -1: {
-        
-        cin >> opa;
-        //cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        if (check_num(opa)) { op = stoi(opa);}
+        cout << "Операция: ";
+        //cin >> op;
+        op = check(op);
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        //if (check_num(opa)) { op = stoi(opa);}
         }break;
         case 1:
         {
+            bool fl = false;
             int n = bilet.size();
             bilet.push_back(addnewapp());
             if (check_num(bilet[n].number) == false)
@@ -176,17 +191,13 @@ int main()
 
             for (int i = 0; i < n; i++)
             {
-                if ((bilet.back().number == bilet[i].number) && (bilet.back().destination == bilet[i].destination)  && (bilet.back().date == bilet[i].date))
+                if ((bilet.back().number == bilet[i].number) && (bilet.back().surname == bilet[i].surname)  && (bilet.back().date == bilet[i].date))
                 {
-                    cout << "Такая заявка уже есть" << endl;
+                    fl = true;
                     bilet.pop_back();
                 }
             }
-            //for (int i = 0; i < 0; i++)
-            //{
-
-            //}
-
+            if (fl) { cout << "Такой заявки быть не может" << endl; }
             op = -1;
 
         }break;
@@ -198,24 +209,31 @@ int main()
         case 3:
         {
             plane numb3;
-            
-            cout << "\nВведите номер: ";
+            cout << "Введите номер: ";
             cin >> numb3.number;
+            ignore();
             cout << "Введите дату: ";
             cin >> numb3.date;
-
+            ignore();
             senumbnamdade(bilet, numb3);
             op = -1;
         }break;
         case 4:
         {
             plane base6;
-            //string ind;
-            cout << "Введите данные заявки: ";
+            cout << "Введите данные заявки" << endl;
+            cout << "Введите номер: ";
             cin >> base6.number;
+            ignore();
+            cout << "Введите пункт назначения: ";
             cin >> base6.destination;
+            ignore();
+            cout << "Введите фамилию: ";
             cin >> base6.surname;
+            ignore();
+            cout << "Введите дату: ";
             cin >> base6.date;
+            ignore();
 
             bool flag = 1;
             for (int i = 0; i < bilet.size(); i++)
@@ -239,5 +257,4 @@ int main()
         }
     }while (op != 5);
 
-    cout << "new test" << endl;
 }

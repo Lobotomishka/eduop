@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{37F1B821-047F-4B89-A935-895989278FBD}|cblab005.vcxproj|solutionrelative:cblab005.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37F1B821-047F-4B89-A935-895989278FBD}|cblab005.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\COMMUNITY\\VC\\TOOLS\\MSVC\\14.43.34808\\INCLUDE\\__MSVC_FORMAT_UCD_TABLES.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\include\\__msvc_format_ucd_tables.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,7 +27,7 @@
               "RelativeDocumentMoniker": "cblab005.cpp",
               "ToolTip": "C:\\Users\\Smetania\\source\\repos\\eduop\\cblab005\\-eduop\\cblab005.cpp",
               "RelativeToolTip": "cblab005.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-25T08:19:13.459Z",
               "EditorCaption": ""
@@ -42,8 +42,7 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\include\\__msvc_format_ucd_tables.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-25T08:19:05.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T08:19:05.148Z"
             }
           ]
         }

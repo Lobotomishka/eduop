@@ -12,24 +12,24 @@
 //        "Фамилия: " << sizif2[i2].surname << endl <<
 //        "Дата: " << sizif2[i2].date << endl;
 //}
-int check(int number) //проверка переменных на буквы и другие некорректные символы
-{
-    //setlocale(LC_ALL, "rus");
-    bool inputValid = false;
-
-    while (!inputValid)
-    {
-        if (cin >> number) {
-            inputValid = true;
-            return number;
-        }
-        else {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Некорректная переменная, попробуйте ещё раз" << endl;
-        }
-    }
-}
+//int check(int number) //проверка переменных на буквы и другие некорректные символы
+//{
+//    //setlocale(LC_ALL, "rus");
+//    bool inputValid = false;
+//
+//    while (!inputValid)
+//    {
+//        if (cin >> number) {
+//            inputValid = true;
+//            return number;
+//        }
+//        else {
+//            cin.clear();
+//            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+//            cout << "Некорректная переменная, попробуйте ещё раз" << endl;
+//        }
+//    }
+//}
 
 struct plane //структура с данными заявки 
 {
@@ -156,7 +156,7 @@ int main()
         case -1: {
         
         cin >> opa;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        //cin.ignore(numeric_limits<streamsize>::max(), '\n');
         if (check_num(opa)) { op = stoi(opa);}
         }break;
         case 1:
@@ -238,4 +238,6 @@ int main()
             break;
         }
     }while (op != 5);
+
+    cout << "new test" << endl;
 }

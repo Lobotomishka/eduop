@@ -1,5 +1,6 @@
 ﻿using namespace std;
 
+#include <cmath>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -14,9 +15,12 @@
 //        "Фамилия: " << sizif2[i2].surname << endl <<
 //        "Дата: " << sizif2[i2].date << endl;
 //}
+<<<<<<< HEAD
 
 void ignore() { cin.ignore(numeric_limits<streamsize>::max(), '\n'); }
 
+=======
+>>>>>>> 54d15624c9b895599d501b20147743e79c4f444f
 int check(int number) //проверка переменных на буквы и другие некорректные символы
 {
     setlocale(LC_ALL, "rus");
@@ -31,7 +35,11 @@ int check(int number) //проверка переменных на буквы и
         else {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+<<<<<<< HEAD
             cout << "Такой операции нет" << endl;
+=======
+            cout << "Некорректная переменная, попробуйте ещё раз" << endl;
+>>>>>>> 54d15624c9b895599d501b20147743e79c4f444f
         }
     }
 }

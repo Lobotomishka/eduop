@@ -15,6 +15,25 @@ struct lapdata			//модель, габаритные размеры (диаго
 	
 };
 
+int check(int number) //проверка переменных на буквы и другие некорректные символы
+{
+	setlocale(LC_ALL, "rus");
+	bool inputValid = false;
+
+	do
+	{
+		if (cin >> number) {
+			inputValid = true;
+			return number;
+		}
+		else {
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Такой операции нет" << endl;
+		}
+	} while (!inputValid);
+}
+
 void hl()
 {
 	for (int i = 0; i < 25; i++)
@@ -24,34 +43,43 @@ void hl()
 	cout << endl;
 }
 
-void seel(vector <lapdata> laptops)
+void seel(vector <lapdata> laptops, int fp, int sp)
 {
-	for (int i = 0; i < laptops.size(); i++)
+	for (fp; fp < sp; fp++)
 	{
 		hl();
-		cout << laptops[i].model << endl <<
-			laptops[i].dia << "''" << endl <<
-			laptops[i].wig << " см." << endl <<
-			laptops[i].mass << " кг." << endl <<
-			laptops[i].prize << " р." << endl;
+		cout << laptops[fp].model << endl <<
+				laptops[fp].dia << "''" << endl <<
+				laptops[fp].wig << " см." << endl <<
+				laptops[fp].mass << " кг." << endl <<
+				laptops[fp].prize << " р." << endl;
 	}
 	hl();
 }
 
 void findonpr(vector <lapdata> laptops)
 {
-	cout << "Введите название производителя: " << endl;
-	string model2;
+	bool fl = false;
+	cout << "Введите название производителя: ";
+	string model2, model3;
 	cin >> model2;
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	char sd = '_';
 	for (int i = 0; i < laptops.size(); i++)
 	{
 		size_t pos = laptops[i].model.find(sd);
 		if (pos != string::npos)
 		{
-
+			 model3 = laptops[i].model.substr(0, pos);
+		}
+		if (model3 == model2)
+		{
+			seel(laptops, i, i+1);
+			fl = true;
 		}
 	}
+	if (fl == false) { cout << "Такой модели нет" << endl; }
+	
 }
 
 int main()
@@ -82,20 +110,21 @@ int main()
 	do
 	{
 		cout << "Операция: ";
-		cin >> op;
+		op = check(op);
 		switch (op)
 		{
 		case(1):
 		{
-			seel(laptops);
+			seel(laptops, 0, laptops.size());
 			break;
 		}
 		case(2):
 		{
-
+			findonpr(laptops);
+			break;
 		}
 		default:
-			cout << "такой операции нет " << endl;
+			if(op != 4){cout << "такой операции нет " << endl;}
 			break;
 		}
 	}while (op != 4);

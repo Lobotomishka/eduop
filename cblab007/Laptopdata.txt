@@ -1,1 +1,2 @@
-Acer_Asphirero  14.5 3 4 27500 
+Acer_Asphirero  14,5 2,5 2 27500 
+Lenovo_Think_pad_x390 13,3 2 1,2 31693

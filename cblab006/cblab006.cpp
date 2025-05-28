@@ -5,6 +5,28 @@
 #include <ctime>
 
 
+int check(int number) //проверка переменных на буквы и другие некорректные символы
+{
+	setlocale(LC_ALL, "rus");
+	bool inputValid = false;
+
+	while (!inputValid)
+	{
+		if (cin >> number) {
+			inputValid = true;
+			return number;
+		}
+		else {
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+
+			cout << "Некорректная переменная, попробуйте ещё раз" << endl;
+
+		}
+	}
+}
+
 void output(vector <int> base2)
 {
 	for (int i : base2)
@@ -19,7 +41,7 @@ vector <int> fillvec(vector <int> base, int size2)
 	srand(time(0));
 	for (int i = 0; i < size2; i++)
 	{
-		base.push_back((rand() % 3) - 2);
+		base.push_back((rand() % 11) - 5);
 	}
 	return base;
 }
@@ -33,13 +55,13 @@ vector <int> average(vector <int> base3)
 		k0 += i;
 	}
 	k0 /= base3.size();
-	k01 = round(k0);
+	k01 = round(k0); //округление
 	cout << "Среднее арифметическое: \n" << k0 << " ==> " << k01 << endl;
 	cout << "Введите место для среднего арифметического: ";
 	cin >> k;
-	k--;
-	if (k >= base3.size() || k < 0) { cout << "Такого места в векторе нет\n"; base3.clear(); return base3; }
-	else{base3[k] = k01;return base3;}
+	k;
+	if (k >= base3.size() + 1 || k < 0) { cout << "Такого места в векторе нет\n"; base3.clear(); return base3; }
+	else{base3.insert(base3.begin() + k, k01); return base3; }
 	
 }
 
@@ -104,18 +126,22 @@ vector <int> maxdelit(vector <int> base5)
 int main()
 {
 	setlocale(LC_ALL, "rus");
-	int size;
+	int size = 0;
 	cout << "Введите размер вектора: ";
-	cin >> size;
+	size = check(size);
+	if (size <= 0) { cout << "Неправильный размер" << endl; return 0; }
 	vector <int> base;
 
 	base = fillvec(base, size); // заполнение вектора
 	output(base); // вывод
 	base = average(base);
 	if (base.size() == 0) { return 0; }
+	cout << "Постановка: ";
 	output(base);
 	base = maxdelit(base);
+	cout << "Удаление максимального элемента(ов): ";
 	output(base);
+	if (base.size() == 0) { cout << "Вектор пуст" << endl; }
 
 
 }

@@ -1,3 +1,4 @@
 ﻿  cblab005.cpp
-C:\Users\Smetania\source\repos\cblab005\cblab005.cpp(147,19): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-  cblab005.vcxproj -> C:\Users\Smetania\source\repos\cblab005\x64\Debug\cblab005.exe
+C:\Users\Smetania\Source\Repos\eduop\cblab005\-eduop\cblab005.cpp(183,19): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Smetania\Source\Repos\eduop\cblab005\-eduop\cblab005.cpp(42,1): warning C4715: check: значение возвращается не при всех путях выполнения
+  cblab005.vcxproj -> C:\Users\Smetania\source\repos\eduop\cblab005\-eduop\x64\Debug\cblab005.exe

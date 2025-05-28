@@ -1,0 +1,5 @@
+﻿  cblab006.cpp
+C:\Users\Smetania\source\repos\eduop\cblab006\cblab006.cpp(41,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Smetania\source\repos\eduop\cblab006\cblab006.cpp(58,13): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\Smetania\source\repos\eduop\cblab006\cblab006.cpp(28,1): warning C4715: check: значение возвращается не при всех путях выполнения
+  cblab006.vcxproj -> C:\Users\Smetania\source\repos\eduop\cblab006\x64\Debug\cblab006.exe

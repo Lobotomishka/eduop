@@ -1,2 +1,5 @@
-Acer_Asphirero  14,5 2,5 2 27500 
+Acer_Asphire_pro  14,5 1,5 2 27500 
 Lenovo_Think_pad_x390 13,3 2 1,2 31693
+ASUS_Vivibook_X1504ZA-BQ1144 15.6 1,7 2,5 40423
+MSI_Rider_GE68HX 16 2,3  3 195946
+Acer_EX215-34-C2LD 15.6 1,75 2,75 26764

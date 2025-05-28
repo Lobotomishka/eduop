@@ -16,7 +16,6 @@
 //        "Дата: " << sizif2[i2].date << endl;
 //}
 
-void ignore() { cin.ignore(numeric_limits<streamsize>::max(), '\n'); }
 
 
 int check(int number) //проверка переменных на буквы и другие некорректные символы
@@ -73,16 +72,16 @@ plane addnewapp() //добавить новую заявку
     plane bilet2, err;
     cout << "Введите номер: ";
     cin >> bilet2.number;
-    ignore();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Введите пункт назначения: ";
     cin >> bilet2.destination;
-    ignore();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Введите фамилию: ";
     cin >> bilet2.surname;
-    ignore();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Введите дату: ";
     cin >> bilet2.date;
-    ignore();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     //if (check_num(bilet2.number) == false)
     //{
     //    cout << "Номер введён некорректно " << endl;
@@ -174,12 +173,11 @@ int main()
         {
         case -1: {
         cout << "Операция: ";
-        //cin >> op;
         op = check(op);
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         //if (check_num(opa)) { op = stoi(opa);}
         }break;
-        case 1:
+        case 1: // добавление новой заявки 
         {
             bool fl = false;
             int n = bilet.size();
@@ -207,20 +205,20 @@ int main()
             op = -1;
 
         }break;
-        case 2:
+        case 2: //вывести всё
         {
             sealprinzipi(bilet);
             op = -1;
         }break;
-        case 3:
+        case 3:         //вывести заявки по  номеру и дате 
         {
-            plane numb3;
+            plane numb3; 
             cout << "Введите номер: ";
             cin >> numb3.number;
-            ignore();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Введите дату: ";
             cin >> numb3.date;
-            ignore();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             senumbnamdade(bilet, numb3);
             op = -1;
         }break;
@@ -230,16 +228,16 @@ int main()
             cout << "Введите данные заявки" << endl;
             cout << "Введите номер: ";
             cin >> base6.number;
-            ignore();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Введите пункт назначения: ";
             cin >> base6.destination;
-            ignore();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Введите фамилию: ";
             cin >> base6.surname;
-            ignore();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Введите дату: ";
             cin >> base6.date;
-            ignore();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
             bool flag = 1;
             for (int i = 0; i < bilet.size(); i++)

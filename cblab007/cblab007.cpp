@@ -98,8 +98,9 @@ void findonpr(vector <lapdata> laptops)
 
 int main()
 {
+	setlocale(LC_ALL, "rus");
 	int op = 0;
-	cout << "Введите номер задания (1, 2)";
+	cout << "Введите номер задания (1, 2): ";
 	op = check(op);
 	switch (op)
 	{
@@ -108,7 +109,7 @@ int main()
 		setlocale(LC_ALL, "rus");
 		string line = "Laptopdata.txt";
 		vector <lapdata> laptops;
-	
+
 		ifstream ind(line);
 		if (!ind.is_open()) {
 			cout << "Ошибка открытия файла!" << endl;
@@ -146,11 +147,11 @@ int main()
 				break;
 			}
 			default:
-				if(op != 3){cout << "такой операции нет " << endl;}
+				if (op != 3) { cout << "такой операции нет " << endl; }
 				break;
 			}
-		}while (op != 3);
-	}
+		} while (op != 3);
+	}break;
 	case(2):
 	{
 		vector <string> laprevers;

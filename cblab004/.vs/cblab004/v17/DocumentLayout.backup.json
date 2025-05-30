@@ -1,0 +1,45 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Smetania\\source\\repos\\eduop\\cblab004\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{48EB5032-D728-4DE8-BE80-1C33FED8E6E6}|cblab004.vcxproj|C:\\Users\\Smetania\\source\\repos\\eduop\\cblab004\\cblab004.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{48EB5032-D728-4DE8-BE80-1C33FED8E6E6}|cblab004.vcxproj|solutionrelative:cblab004.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "cblab004.cpp",
+              "DocumentMoniker": "C:\\Users\\Smetania\\source\\repos\\eduop\\cblab004\\cblab004.cpp",
+              "RelativeDocumentMoniker": "cblab004.cpp",
+              "ToolTip": "C:\\Users\\Smetania\\source\\repos\\eduop\\cblab004\\cblab004.cpp*",
+              "RelativeToolTip": "cblab004.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-30T10:00:25.719Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

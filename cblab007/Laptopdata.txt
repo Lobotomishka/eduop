@@ -1,5 +1,7 @@
-Acer_Asphire_pro  14,5 1,5 2 27500 
-Lenovo_Think_pad_x390 13,3 2 1,2 31693
-ASUS_Vivibook_X1504ZA-BQ1144 15.6 1,7 2,5 40423
-MSI_Rider_GE68HX 16 2,3  3 195946
-Acer_EX215-34-C2LD 15.6 1,75 2,75 26764
+Acer_Asphire_pro  14.5 '' 1.5 kg 2 cm 27500 rub
+Lenovo_Think_pad_x390 13.3 '' 2 kg 1.2 cm 31693 rub
+ASUS_Vivibook_X1504ZA-BQ1144 15.6 '' 1.7 kg 2.5 cm 40423 rub
+MSI_Rider_GE68HX 16 '' 2.3 kg  3 cm 195946 rub
+Acer_EX215-34-C2LD 15.6 '' 1.75 kg 2.75 cm 26764 rub
+MSI_Rider_GE68HX 16 '' 2.3 kg  3 cm 195946 rub
+Acer_EX215-34-C2LD 15.6 '' 1.75 kg 2.75 cm 26764 rub

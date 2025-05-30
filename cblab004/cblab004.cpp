@@ -33,6 +33,10 @@ int main()
     {
         cout << words[i] << " ";
     }
+    char pods;
+    cout << "Введите подстроку: " << endl;
+    cin >> pods;
+
     cout << "\n\n";
     return 0;
 

@@ -67,40 +67,42 @@ void seel2(vector <string> laptops, int fp, int sp)
 	for (int i = 0; i <  laptops.size(); i++)
 	{
 		cout << laptops[i] << " ";
-		if ((i + 1) % 5 == 0)
+		if ((i + 1) % 9 == 0)
 		{
 			cout << endl;
 		}
 	}
 	//hl();
 }
-void findonpr(vector <lapdata> laptops)
-{
-	bool fl = false;
-	cout << "Введите название производителя: ";
-	string model2, model3;
-	cin >> model2;
-	cin.ignore(numeric_limits<streamsize>::max(), '\n');
-	char sd = '_';
-	for (int i = 0; i < laptops.size(); i++)
-	{
-		size_t pos = laptops[i].model.find(sd);
-		if (pos != string::npos)
-		{
-			model3 = laptops[i].model.substr(0, pos);
-		}
-		if (model3 == model2)
-		{
-			seel(laptops, i, i + 1);
-			fl = true;
-		}
-	}
-	if (fl == false) { cout << "Такой модели нет" << endl; }
-}
+//bool findonpr(vector <lapdata> laptops, string model2, int i)
+//{
+//	bool fl = false;
+//	//cout << "Введите название производителя: ";
+//	string model3;
+//	//cin >> model2;
+//	//cin.ignore(numeric_limits<streamsize>::max(), '\n');
+//	char sd = '_';
+//	//for (int i = 0; i < laptops.size(); i++)
+//	//{
+//	size_t pos = laptops[i].model.find(sd);
+//	if (pos != string::npos)
+//	{
+//		model3 = laptops[i].model.substr(0, pos);
+//	}
+//	if (model3 == model2)
+//	{
+//		seel(laptops, i, i + 1);
+//		fl = true;
+//	}
+//	//}
+//	if (fl == false) { return fl; }
+//}
+
+
 void findothers(vector <lapdata> laptops, int parop)
 {
 	bool fl2 = false;
-	cout << "Введите параметр: ";
+	cout << "Значеие: ";
 	string param;
 	cin >> param;
 	cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -111,8 +113,19 @@ void findothers(vector <lapdata> laptops, int parop)
 		{
 		case(1):
 		{
-			findonpr(laptops);
-		}
+			string model3;
+			char sd = '_';
+			size_t pos = laptops[i].model.find(sd);
+			if (pos != string::npos)
+			{
+				model3 = laptops[i].model.substr(0, pos);
+			}
+			if (model3 == param)
+			{
+				seel(laptops, i, i + 1);
+				fl2 = true;
+			}
+		}break;
 		case(2):
 		{
 			if (param == laptops[i].dia)
@@ -121,17 +134,18 @@ void findothers(vector <lapdata> laptops, int parop)
 				fl2 = true;
 			}
 		}break;
-		case(3):
+		case(3):		
 		{
-			if (param == laptops[i].mass)
+			if (param == laptops[i].wig)
 			{
 				seel(laptops, i, i + 1);
 				fl2 = true;
 			}
 		}break;
+
 		case(4):
 		{
-			if (param == laptops[i].wig)
+			if (param == laptops[i].mass)
 			{
 				seel(laptops, i, i + 1);
 				fl2 = true;
@@ -224,15 +238,14 @@ int main()
 			}
 			case(2):
 			{
-				//findonpr(laptops);
-				
 				int op2 = 0;
 				cout << "Введите параметр поиска" << endl
 					<< "По производителю - 1" << endl
 					<< "По диагонали - 2" << endl
-					<< "По весу - 3" << endl
-					<< "По толщине - 4" << endl
+					<< "По толщине - 3" << endl
+					<< "По весу - 4" << endl
 					<< "По цене - 5" << endl;
+				cout << "Тип параметра: ";
 				op2 = check(op2);
 				findothers(laptops, op2);
 			}break;

@@ -1,6 +1,6 @@
 ﻿  cblab007.cpp
-C:\Users\Пользователь\source\repos\eduop\cblab007\cblab007.cpp(141,34): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Пользователь\source\repos\eduop\cblab007\cblab007.cpp(171,37): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Пользователь\source\repos\eduop\cblab007\cblab007.cpp(176,35): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Пользователь\source\repos\eduop\cblab007\cblab007.cpp(36): warning C4715: check: значение возвращается не при всех путях выполнения
+C:\Users\Пользователь\source\repos\eduop\cblab007\cblab007.cpp(236,34): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Пользователь\source\repos\eduop\cblab007\cblab007.cpp(274,37): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Пользователь\source\repos\eduop\cblab007\cblab007.cpp(279,35): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Пользователь\source\repos\eduop\cblab007\cblab007.cpp(40): warning C4715: check: значение возвращается не при всех путях выполнения
   cblab007.vcxproj -> C:\Users\Пользователь\source\repos\eduop\cblab007\x64\Debug\cblab007.exe

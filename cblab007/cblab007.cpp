@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <algorithm>
 
 struct lapdata			//модель, габаритные размеры (диагональ, толщина), вес, цена
 {
@@ -39,7 +40,7 @@ int check(int number)		//проверка переменных на буквы �
 	} while (!inputValid);
 }
 
-void hl()
+void hl() // полосочка
 {
 	for (int i = 0; i < 25; i++)
 	{
@@ -48,7 +49,7 @@ void hl()
 	cout << endl;
 }
 
-void seel(vector <lapdata> laptops, int fp, int sp)
+void seel(vector <lapdata> laptops, int fp, int sp) //вывод диапозона 
 {
 	for (fp; fp < sp; fp++)
 	{
@@ -62,7 +63,7 @@ void seel(vector <lapdata> laptops, int fp, int sp)
 	hl();
 }
 
-void seel2(vector <string> laptops, int fp, int sp)
+void seel2(vector <string> laptops, int fp, int sp) // вывод вектора для 2 задания 
 {
 	for (int i = 0; i <  laptops.size(); i++)
 	{
@@ -99,7 +100,7 @@ void seel2(vector <string> laptops, int fp, int sp)
 //}
 
 
-void findothers(vector <lapdata> laptops, int parop)
+void findothers(vector <lapdata> laptops, int parop) // поиск по параметру 
 {
 	bool fl2 = false;
 	cout << "Значеие: ";
@@ -109,7 +110,7 @@ void findothers(vector <lapdata> laptops, int parop)
 
 	for (int i = 0; i < laptops.size(); i++)
 	{
-		switch (parop)
+		switch (parop) // свич перенаправляет на параметр
 		{
 		case(1):
 		{
@@ -257,41 +258,79 @@ int main()
 	}break;
 	case(2):
 	{
+		//vector <string> laprevers;
+		//ifstream ind("dataforreverse.txt");
+		//if (!ind.is_open()) {
+		//	cout << "Ошибка открытия файла!" << endl;
+		//	return 1;
+		//}
+		//
+		//string word;
+		//
+		//while (getline(ind, word))
+		//{
+		//laprevers.push_back(word);
+		//}
+		//ind.close();
+		//seel2(laprevers, 0, laprevers.size());
+		//
+		//cout << "\n\n\n";
+		//
+		//vector <string> laprev2 (laprevers.rbegin(), laprevers.rend());
+		//seel2(laprev2, 0, laprevers.size());
+		//
+		//ofstream ind2("Laptopdatareverse.txt");
+		//if (!ind2.is_open()) {
+		//	cout << "Ошибка открытия файла!" << endl;
+		//	return 1;
+		//}
+		//int i2 = 0;
+		//for (string i : laprev2)
+		//{
+		//	ind2 << i << " ";
+		//	i2++;
+		//	if (i2 % 9 == 0) { ind2 << endl; }
+		//	
+		//}
+		//ind2.close();
 		vector <string> laprevers;
-		ifstream ind("Laptopdata.txt");
+		ifstream ind("dataforreverse.txt");
 		if (!ind.is_open()) {
 			cout << "Ошибка открытия файла!" << endl;
 			return 1;
 		}
-
-		string word;
-
-		while (ind >> word)
+		string str;
+		while (getline(ind, str))
 		{
-			laprevers.push_back(word);
+			laprevers.push_back(str);
 		}
 		ind.close();
-		seel2(laprevers, 0, laprevers.size());
-		
+		for (string i : laprevers)
+		{
+			cout << i << endl;
+		}
 		cout << "\n\n\n";
-
+		for (int i = 0; i < laprevers.size(); i++)
+		{
+			reverse(laprevers[i].begin(), laprevers[i].end());
+		}
 		vector <string> laprev2 (laprevers.rbegin(), laprevers.rend());
-		seel2(laprev2, 0, laprevers.size());
+		for (string i : laprev2)
+		{
+			cout << i << endl;
+		}
 
-		ofstream ind2("Laptopdatareverse");
+		ofstream ind2("Laptopdatareverse.txt");
 		if (!ind2.is_open()) {
 			cout << "Ошибка открытия файла!" << endl;
 			return 1;
 		}
-		int i2 = 0;
 		for (string i : laprev2)
 		{
-			ind2 << i << " ";
-			i2++;
-			if (i2 % 9 == 0) { ind2 << endl; }
-			
+			ind2 << i << endl;
 		}
 		ind2.close();
+
 	}
 	default:
 		break;

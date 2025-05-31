@@ -1,0 +1,8 @@
+If you don't want to stash changes that you already staged - e.g. with git add - then
+add the option --keep-index. Note however, that this will still prevent merging
+if those staged changes collide with
+the ones from upstream. If you want remove all local changes - including files that are untracked by
+git - from your working copy, simply stash them
+
+Find definitions and references for functions and other symbols
+in this file by clicking a symbol below or in the code.

@@ -1,56 +1,42 @@
 ﻿#include <iostream>
 #include <string>
-#include <sstream>
+#include <cstring>
 #include <Windows.h>
-
 using namespace std;
 
-void init_console() 
+const int maxlword = 100;
+const int maxlen = 1000;
+
+void init_console()
 {
     setlocale(LC_ALL, "Russian");
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 }
 
-int main() 
-{
+int main() {
     init_console();
-    string input;
-    cout << "Введите слова, разделённые пробелами: ";
-    getline(cin, input);
 
-    // Подсчитываем количество слов
-    istringstream counter(input);
-    string word;
+    char input[maxlen];
+    
+    string words[maxlword];
+    
     int wordCount = 0;
-    while (counter >> word) {
-        wordCount++;
+    char* next;
+    cout << "Введите строку со словами: ";
+    
+    cin.getline(input, maxlen);
+
+    char* p = strtok_s(input, " ", &next);
+    while (p != nullptr && wordCount < maxlword) {
+        words[wordCount++] = string(p);
+        p = strtok_s(nullptr, " ", &next);
     }
 
-    // Создаём массив строк нужного размера
-    string* words = new string[wordCount];
-
-    // Заполняем массив словами
-    istringstream stream(input);
-    int index = 0;
-    while (stream >> word && index < wordCount) {
-        words[index] = word;
-        index++;
+    cout << "Считанные слова:\n";
+    for (int i = 0; i < wordCount; i++) {
+        cout << words[i] << endl;
     }
-    //cout << "Количество слов: " << wordCount << endl;
-    cout << "Слова в массиве:" << endl;             // Выводим результат
-    for (int i = 0; i < wordCount; i++) 
-    { 
-        cout << i + 1  << " " << words[i] << endl;
-        //cout << words[i];
-        //if (i != wordCount - 1) {
-        //    cout << ", ";
-        //}
-    }
-    cout << endl;
-
-    // Освобождаем память
-    //delete[] words;
 
     return 0;
 }

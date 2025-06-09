@@ -1,11 +1,8 @@
 ﻿#include <iostream>
 #include <string>
-#include <cstring>
 #include <Windows.h>
 using namespace std;
 
-const int maxlword = 100;
-const int maxlen = 1000;
 
 void init_console()
 {
@@ -16,27 +13,64 @@ void init_console()
 
 int main() {
     init_console();
+    cout << "Введите строку: ";
+    string input;
+    getline(cin, input); // Считываем всю строку
 
-    char input[maxlen];
-    
-    string words[maxlword];
-    
+    //  Подсчет количества слов
     int wordCount = 0;
-    char* next;
-    cout << "Введите строку со словами: ";
-    
-    cin.getline(input, maxlen);
-
-    char* p = strtok_s(input, " ", &next);
-    while (p != nullptr && wordCount < maxlword) {
-        words[wordCount++] = string(p);
-        p = strtok_s(nullptr, " ", &next);
+    bool inWord = false;
+    for (char c : input) {
+        if (c == ' ') {
+            if (inWord) {
+                inWord = false;
+            }
+        }
+        else {
+            if (!inWord) {
+                wordCount++;
+                inWord = true;
+            }
+        }
     }
 
-    cout << "Считанные слова:\n";
+    // Если слов нет, завершаем программу
+    if (wordCount == 0) {
+        cout << "Пустая строка" << endl;
+        return 0;
+    }
+
+    //  Создаем динамический массив для хранения слов
+    string* words = new string[wordCount];
+
+    // Извлекаем слова и сохраняем в массив
+    int index = 0;
+    size_t start = 0;
+    size_t end = 0;
+    size_t len = input.length();
+
+    while (start < len && index < wordCount) {
+        // Пропускаем пробелы
+        while (start < len && input[start] == ' ') {
+            start++;
+        }
+
+        // Находим конец слова
+        end = start;
+        while (end < len && input[end] != ' ') {
+            end++;
+        }
+
+        // Извлекаем слово и сохраняем
+        words[index++] = input.substr(start, end - start);
+
+        // Переходим к следующей позиции
+        start = end + 1;
+    }
+
+    //  Выводим результат
+    cout << "Слов в массиве: " << wordCount << endl;
     for (int i = 0; i < wordCount; i++) {
         cout << words[i] << endl;
     }
-
-    return 0;
 }
